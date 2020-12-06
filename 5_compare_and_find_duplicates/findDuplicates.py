@@ -39,14 +39,13 @@ def searchDuplicates(foldersList):
     
     printStars()
 
-    # Step 4: If there are more files of given size, we calculate hash for them
-    print("STEP 4: Calculating hash")
+    # Step 4: If there are more files of given size, we compare each file byte after byte
+    print("STEP 4: Comparing bytes")
     finalDuplicates = {}
     for listOfDuplicatedSizes in dictionaryWithSizes.values():
         if len(listOfDuplicatedSizes) > 1:
-            sameHashesDictionary = buildListOfFilesWithSameHashes(listOfDuplicatedSizes)
-            mergeValuesWithSameKeys(finalDuplicates, sameHashesDictionary)
-
+            sameContent = buildDictionaryOfFilesWithSameBytes(listOfDuplicatedSizes)
+            mergeValuesWithSameKeys(finalDuplicates, sameContent)
 
     return finalDuplicates
 
@@ -81,18 +80,44 @@ def printStars():
 
     print();
 
-def buildListOfFilesWithSameHashes(fileList):
+def isSameContent(path1, path2):
+    firstFile = open(path1, "rb")
+    secondFile = open(path2, "rb")
     
-    sameHashes = {}
-    
-    for path in fileList:
-        fileHashMD5 = hashFileWithMD5(path)
-        if fileHashMD5 in sameHashes:
-            sameHashes[fileHashMD5].append(path)
-        else:
-            sameHashes[fileHashMD5] = [path]
+    firstFileBytes = firstFile.read(1)
+    secondFileBytes = secondFile.read(1)
 
-    return sameHashes
+    while firstFileBytes:
+            if secondFileBytes != firstFileBytes:
+                return False
+            else:
+                firstFileBytes = firstFile.read(1)
+                secondFileBytes = secondFile.read(1)
+
+    firstFile.close()
+    secondFile.close();
+    return True
+
+def buildDictionaryOfFilesWithSameBytes(fileList):
+    
+    sameBytesDictionary = {}
+    
+    filesCount = len(fileList)
+
+    for element in fileList:
+            curr = element
+            for otherElement in fileList:
+                if curr == otherElement:
+                    print('continuing')
+                    continue
+                else:
+                    if isSameContent(curr, otherElement) == True:
+                            sameBytesDictionary[curr] = otherElement
+                            print('same')
+                            print(curr)
+                            print(otherElement)
+        
+    return sameBytesDictionary
 
 def hashFileWithMD5(path):
     afile = open(path, 'rb')
@@ -137,7 +162,7 @@ def main():
     duplicates = searchDuplicates(foldersList)
 
     for key, value in duplicates.items():
-             print("duplicated hashes: <<<" + str(key) + ">>>  " + str(value))
+           print("duplicated bytes: <<<" + str(key) + ">>>  " + str(value))
 
 if __name__ == "__main__":
     main()
