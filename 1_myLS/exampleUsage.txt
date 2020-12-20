@@ -1,0 +1,38 @@
+1. USAGE.
+
+perl myLS.pl
+or
+perl myLS.pl "//mnt//c//StudiaRemote//semestr_7"
+
+2. EXAMPLE OUTPUT WITHOUAT PATH:
+
+****************************************
+STARTING ls SIMULATOR. (print files inside given folder)
+****************************************
+Item:                              .   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:                             ..   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:               exampleUsage.txt   ||  size [ 00000609 ] bytes || permissions [ 0777 ]      
+Item:                        myLS.pl   ||  size [ 00001190 ] bytes || permissions [ 0777 ]      
+
+
+
+3. EXAMPLE OUTPUT INCLUDING PATH:
+
+****************************************
+STARTING ls SIMULATOR. (print files inside given folder)
+****************************************
+Item:                              .   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:                             ..   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:                alg2 - potworka   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:                gry_komputerowe   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:              metody_kompilacji   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item: programowanie_aplikacji_internetowych   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:           programowanie_csharp   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item: programowanie_jezyki_skryptowe   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item: programowanie_jezyki_skryptowe_inny_folder   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item: programowanie_komponentowe_spring   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item: programowanie_komputerow_wielordzeniowych   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item: programowanie_techniki_programowania_wieloagentowego   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:              programowanie_xml   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item: programwanie_serwerow_bazodanowych   ||  size [ 00004096 ] bytes || permissions [ 0777 ]      
+Item:           seminarium_Dyplomowe   ||  size [ 00004096 ] bytes || permissions [ 0777 ]   
