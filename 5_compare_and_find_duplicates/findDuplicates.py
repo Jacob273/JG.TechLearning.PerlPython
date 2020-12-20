@@ -19,7 +19,7 @@ def searchDuplicates(foldersList):
 
     # Step 2: 
     printStars()
-    print("STEP 2: Verification (all files with sizes)")
+    print("STEP 2: Verification for debugging purposes (all files with sizes)")
     printStars()
     for key, value in dictionaryWithSizes.items():
         print("<K, V[]>", end = "  ")  
@@ -30,7 +30,7 @@ def searchDuplicates(foldersList):
 
     # Step 3:
     printStars()
-    print("STEP 3: Verification (files with same sizes only)")
+    print("STEP 3: Verification for debugging purposes (files with same sizes only)")
     printStars()
     for key, value in dictionaryWithSizes.items():
         if len(value) > 1:
@@ -108,14 +108,16 @@ def buildDictionaryOfFilesWithSameBytes(fileList):
             curr = element
             for otherElement in fileList:
                 if curr == otherElement:
-                    print('continuing')
+                    # debugging purposes
+                    # print('continuing')
                     continue
                 else:
                     if isSameContent(curr, otherElement) == True:
                             sameBytesDictionary[curr] = otherElement
-                            print('same')
-                            print(curr)
-                            print(otherElement)
+                            # debugging purposes:
+                            # print('same')
+                            # print(curr)
+                            # print(otherElement)
         
     return sameBytesDictionary
 
