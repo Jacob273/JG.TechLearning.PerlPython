@@ -1,0 +1,23 @@
+1. USAGE.
+
+<yourPathtoPythonExeFolder>/python.exe <yourPathtoScript>/myLS.py ".."
+or
+<yourPathtoPythonExeFolder>/python.exe <yourPathtoScript>/myLS.py "."
+or
+<yourPathtoPythonExeFolder>/python.exe <yourPathtoScript>/myLS.py "C:/"
+
+2. EXAMPLE OUTPUT WITHOUAT PATH:
+
+********************************************************************************
+STARTING ls SIMULATOR. (print files inside folder, where the script resides)
+********************************************************************************
+Item: .git
+Item: .gitignore
+Item: .vscode
+Item: 1_myLS
+Item: 2_parsing_ics
+Item: 3_web scraping
+Item: 4_cipher
+Item: 5_compare_and_find_duplicates
+Item: 6_myLS_ver2
+Item: README.md777 ]      
